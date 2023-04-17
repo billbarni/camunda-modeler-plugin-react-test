@@ -5,8 +5,9 @@ import React, {
 } from 'camunda-modeler-plugin-helpers/react';
 
 import { IconContext } from "react-icons/lib";
-import { IoPeopleOutline } from "react-icons/io5";
+import { IoPeopleOutline } from "react-icons/io5"; 
 
+import { render } from 'preact-render-to-string';
 export default class CustomPaletteProvider {
 
   constructor(palette, create, elementFactory, bpmnFactory, injector) {
@@ -22,13 +23,14 @@ export default class CustomPaletteProvider {
     const iconElement = <IoPeopleOutline />;
 
     // how to render this to html?
-    const groupWithIconHtml =
+    const groupWithIconHtml = render(
       <div class="entry" draggable="true">
         <IconContext.Provider value={{ size: '24px', style: { verticalAlign: 'middle' } }} >
           {iconElement}
         </IconContext.Provider>
-      </div>
-      ;
+      </div>);
+
+      console.log(groupWithIconHtml)
 
     return {
       'create.DynSkill': {

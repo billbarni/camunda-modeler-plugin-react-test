@@ -19,11 +19,12 @@
     "react": "^16.8.6",
     "react-calendar": "^3.7.0",
     "react-dom": "^16.8.6",
-    "react-icons": "^4.3.1",
-    "xmlbuilder": "^15.1.1"
-  },
-  "devDependencies": {
+    "react-icons": "4.8.0",
+    "xmlbuilder": "^15.1.1",
     "@babel/core": "^7.19.6",
+    "@babel/plugin-transform-react-jsx": "^7.16.5",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
     "buffer": "^6.0.3",
     "camunda-modeler-plugin-helpers": "^5.1.0",
     "camunda-modeler-webpack-plugin": "^0.1.0",

@@ -4,7 +4,7 @@ import {
 } from 'camunda-modeler-plugin-helpers';
 
 import palette from './pallete/';
-import config from './config/config-dialog';
+//import config from './config/config-dialog';
 
 registerPlatformBpmnJSPlugin(palette);
-registerClientExtension(config);
+// registerClientExtension(config);

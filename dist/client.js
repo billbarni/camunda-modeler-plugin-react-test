@@ -1,158 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./client/config/config-dialog-overlay.js":
-/*!************************************************!*\
-  !*** ./client/config/config-dialog-overlay.js ***!
-  \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ ConfigDialogOverlay)
-/* harmony export */ });
-/* harmony import */ var camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! camunda-modeler-plugin-helpers/react */ "./node_modules/camunda-modeler-plugin-helpers/react.js");
-/* harmony import */ var camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var camunda_modeler_plugin_helpers_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! camunda-modeler-plugin-helpers/components */ "./node_modules/camunda-modeler-plugin-helpers/components.js");
-
-
-const OVERLAY_OFFSET = {
-  top: 0,
-  right: 0
-};
-function ConfigDialogOverlay(props) {
-  const {
-    anchor,
-    onClose,
-    initValues
-  } = props;
-  const [url, setUrl] = (0,camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
-  const handleInputFileChange = async event => {
-    const url = event.target.value;
-    if (!url) {
-      return;
-    }
-    setUrl(url);
-  };
-  const fetchData = async () => {
-    const response = await props.initValues.urlPromise;
-    return response;
-  };
-  (0,camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    const getData = async () => {
-      const result = await fetchData();
-      setUrl(result);
-    };
-    getData();
-  }, []);
-  const isValid = () => {
-    return !!initValues;
-  };
-  const handleSubmit = async () => onClose({
-    url
-  });
-  return /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(camunda_modeler_plugin_helpers_components__WEBPACK_IMPORTED_MODULE_1__.Overlay, {
-    offset: OVERLAY_OFFSET,
-    anchor: anchor,
-    onClose: onClose
-  }, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(camunda_modeler_plugin_helpers_components__WEBPACK_IMPORTED_MODULE_1__.Section, null, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(camunda_modeler_plugin_helpers_components__WEBPACK_IMPORTED_MODULE_1__.Section.Header, null, "N&D Group Plugin Parameters"), /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(camunda_modeler_plugin_helpers_components__WEBPACK_IMPORTED_MODULE_1__.Section.Body, null, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
-    id: "import-form",
-    className: "import-form",
-    onSubmit: handleSubmit
-  }, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(camunda_modeler_plugin_helpers_components__WEBPACK_IMPORTED_MODULE_1__.Section, null, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(camunda_modeler_plugin_helpers_components__WEBPACK_IMPORTED_MODULE_1__.Section.Header, null, "API Details"), /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(camunda_modeler_plugin_helpers_components__WEBPACK_IMPORTED_MODULE_1__.Section.Body, null, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement("fieldset", null, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "fields"
-  }, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "form-group"
-  }, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "URL"), /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    type: "text",
-    id: 'tableName',
-    className: "form-control",
-    name: 'tableName',
-    placeholder: "Endpoint URL",
-    value: url,
-    onChange: handleInputFileChange
-  })))))), /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(camunda_modeler_plugin_helpers_components__WEBPACK_IMPORTED_MODULE_1__.Section, null)), /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(camunda_modeler_plugin_helpers_components__WEBPACK_IMPORTED_MODULE_1__.Section.Actions, null, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    type: "submit",
-    className: "btn btn-primary",
-    disabled: !isValid(),
-    form: "import-form"
-  }, "Save")))));
-}
-
-/***/ }),
-
-/***/ "./client/config/config-dialog.js":
-/*!****************************************!*\
-  !*** ./client/config/config-dialog.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ ConfigDialogPlugin)
-/* harmony export */ });
-/* harmony import */ var camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! camunda-modeler-plugin-helpers/react */ "./node_modules/camunda-modeler-plugin-helpers/react.js");
-/* harmony import */ var camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var camunda_modeler_plugin_helpers_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! camunda-modeler-plugin-helpers/components */ "./node_modules/camunda-modeler-plugin-helpers/components.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _config_dialog_overlay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./config-dialog-overlay */ "./client/config/config-dialog-overlay.js");
-/* harmony import */ var _resources_file_excel_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../resources/file-excel.svg */ "./resources/file-excel.svg");
-
-
-
-
-
-const defaultState = {
-  configOpen: false
-};
-class ConfigDialogPlugin extends camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = defaultState;
-    this._buttonRef = camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createRef();
-  }
-  handleConfigClosed(closeDetails) {
-    this.setState({
-      modalOpen: false
-    });
-    if (!closeDetails) {
-      return;
-    }
-    this.props.config.set('ndgroupCamundaPluginEndpoints', closeDetails.url);
-  }
-  openModal() {
-    this.setState({
-      modalOpen: true
-    });
-  }
-  render() {
-    const urlPromise = this.props.config.get('ndgroupCamundaPluginEndpoints', '');
-    const initValues = {
-      urlPromise
-    };
-    return /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(camunda_modeler_plugin_helpers_components__WEBPACK_IMPORTED_MODULE_1__.Fill, {
-      slot: "tab-actions",
-      group: "xx_ndgroup"
-    }, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-      ref: this._buttonRef,
-      title: "Open excel sheet",
-      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()('btn btn--tab-action', {
-        'btn--active': this.state.modalOpen
-      }),
-      onClick: this.openModal.bind(this)
-    }, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_resources_file_excel_svg__WEBPACK_IMPORTED_MODULE_4__["default"], null))), this.state.modalOpen && /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_config_dialog_overlay__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      anchor: this._buttonRef.current,
-      onClose: this.handleConfigClosed.bind(this),
-      initValues: initValues
-    }));
-  }
-}
-
-/***/ }),
-
 /***/ "./client/pallete/index.js":
 /*!*********************************!*\
   !*** ./client/pallete/index.js ***!
@@ -187,7 +35,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! camunda-modeler-plugin-helpers/react */ "./node_modules/camunda-modeler-plugin-helpers/react.js");
 /* harmony import */ var camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_icons_lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/lib */ "./node_modules/react-icons/lib/esm/index.js");
-/* harmony import */ var react_icons_io5__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/io5 */ "./node_modules/react-icons/io5/index.esm.js");
+/* harmony import */ var react_icons_io5__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/io5 */ "./node_modules/react-icons/io5/index.esm.js");
+/* harmony import */ var preact_render_to_string__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! preact-render-to-string */ "./node_modules/preact-render-to-string/dist/index.mjs");
+/* harmony import */ var _bpmn_io_properties_panel_preact_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @bpmn-io/properties-panel/preact/jsx-runtime */ "./node_modules/camunda-modeler-plugin-helpers/vendor/@bpmn-io/properties-panel/preact/jsx-runtime.js");
+/* harmony import */ var _bpmn_io_properties_panel_preact_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_bpmn_io_properties_panel_preact_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
 
 
 
@@ -200,20 +53,23 @@ class CustomPaletteProvider {
     palette.registerProvider(this);
   }
   getPaletteEntries() {
-    const iconElement = /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_io5__WEBPACK_IMPORTED_MODULE_2__.IoPeopleOutline, null);
+    const iconElement = (0,_bpmn_io_properties_panel_preact_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_icons_io5__WEBPACK_IMPORTED_MODULE_4__.IoPeopleOutline, {});
 
     // how to render this to html?
-    const groupWithIconHtml = /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    const groupWithIconHtml = (0,preact_render_to_string__WEBPACK_IMPORTED_MODULE_2__.render)((0,_bpmn_io_properties_panel_preact_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       class: "entry",
-      draggable: "true"
-    }, /*#__PURE__*/camunda_modeler_plugin_helpers_react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_lib__WEBPACK_IMPORTED_MODULE_1__.IconContext.Provider, {
-      value: {
-        size: '24px',
-        style: {
-          verticalAlign: 'middle'
-        }
-      }
-    }, iconElement));
+      draggable: "true",
+      children: (0,_bpmn_io_properties_panel_preact_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_icons_lib__WEBPACK_IMPORTED_MODULE_1__.IconContext.Provider, {
+        value: {
+          size: '24px',
+          style: {
+            verticalAlign: 'middle'
+          }
+        },
+        children: iconElement
+      })
+    }));
+    console.log(groupWithIconHtml);
     return {
       'create.DynSkill': {
         group: 'activity',
@@ -239,182 +95,25 @@ CustomPaletteProvider.$inject = ['palette', 'create', 'elementFactory', 'bpmnFac
 
 /***/ }),
 
-/***/ "./node_modules/camunda-modeler-plugin-helpers/components.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/camunda-modeler-plugin-helpers/components.js ***!
-  \*******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./node_modules/camunda-modeler-plugin-helpers/helper.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/camunda-modeler-plugin-helpers/helper.js ***!
+  \***************************************************************/
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Fill": () => (/* binding */ Fill),
-/* harmony export */   "Modal": () => (/* binding */ Modal),
-/* harmony export */   "NotCompatible": () => (/* binding */ NotCompatible),
-/* harmony export */   "Overlay": () => (/* binding */ Overlay),
-/* harmony export */   "Section": () => (/* binding */ Section),
-/* harmony export */   "ToggleSwitch": () => (/* binding */ ToggleSwitch)
-/* harmony export */ });
-if (!window.components) {
-  throw notCompatible('3.4');
+module.exports.returnOrThrow = function(getter, minimalModelerVersion) {
+  let result;
+  try {
+    result = getter();
+  } catch (error) {}
+
+  if (!result) {
+    throw new Error(`Not compatible with Camunda Modeler < ${minimalModelerVersion}`);
+  }
+
+  return result;
 }
 
-function notCompatible(requiredVersion) {
-  return new Error('Not compatible with Camunda Modeler < v' + requiredVersion);
-}
-
-const NotCompatible = function(requiredVersion) {
-  return function NotCompatibleComponent() {
-    throw notCompatible(requiredVersion);
-  };
-};
-
-/**
- * Fill component. Set `slot` to "toolbar" to include in the top toolbar.
- * Use `group` and `priority=0` to place for correct ordering. The higher
- * the priority, the earlier the Fill is displayed within the group.
- *
- * @type {import('react').ComponentType<{ slot: string, group?: string, priority?: Number }>}
- *
- * @example
- *
- * import { Fill } from 'camunda-modeler-plugin-helpers/components';
- *
- * function CustomFill(props) {
- *   return (
- *     <Fill group="4_export" slot="toolbar" priority={100}>
- *       <button type="button" onClick={ props.openExportTool }>
- *         Open Export Tool
- *       </button>
- *     </Fill>
- *   );
- * }
- */
-const Fill = window.components.Fill;
-
-/**
- * Modal component.
- *
- * @type {import('react').ComponentType<{ onClose: Function }>}
- *
- * @example
- *
- * import { Modal } from 'camunda-modeler-plugin-helpers/components';
- *
- * function CustomModal(props) {
- *   return (
- *    <Modal onClose={ props.onClose }>
- *      <Modal.Title>
- *        Custom Modal
- *      </Modal.Title>
- *      <Modal.Body>
- *        Hello world!
- *      </Modal.Body>
- *      <Modal.Footer>
- *        <button type="button" onClick={ props.onClose }>
- *          Close
- *        </button>
- *      </Modal.Footer>
- *    </Modal>
- *   );
- * }
- */
-const Modal = window.components.Modal;
-
-/**
- * Overlay component.
- *
- * @type {import('react').ComponentType<{ 
- *  onClose: Function, 
- *  anchor: Node, 
- *  offset?: { top?: number, bottom?: number, left?: number, right?: number }, 
- *  maxWidth?: number | string,
- *  maxHeight?: number | string,
- *  minWidth?: number | string,
- *  minHeight?: number | string
- * }>}
- *
- * @example
- * 
- * import { Overlay } from 'camunda-modeler-plugin-helpers/components';
- *
- * function CustomOverlay(props) {
- *   return (
- *    <Overlay onClose={ props.onClose } anchor={ props.btn_ref } offset={ props.anchor }>
- *      <Overlay.Title>
- *        Custom Modal
- *      </Overlay.Title>
- *      <Overlay.Body>
- *        Hello world!
- *      </Overlay.Body>
- *      <Overlay.Footer>
- *        <button type="button" onClick={ props.onClose }>
- *          Close
- *        </button>
- *      </Overlay.Footer>
- *    </Overlay>
- *   );
- * }
- */
- const Overlay = window.components.Overlay || NotCompatible('5.0');
-
- /**
- * Section component.
- *
- * @type {import('react').ComponentType<{ maxHeight: Number | String, relativePos: Boolean } }>}
- *
- * @example
- * 
- * import { Section } from 'camunda-modeler-plugin-helpers/components';
- *
- * function CustomSection(props) {
- *   return (
- *    <Section maxHeight="240px">
- *     <Section.Header>
- *       Custom section
- *     </Section.Header>
- *     <Section.Body>
- *       Hello world!
- *     </Section.Body>
- *     <Section.Actions>
- *      <button type="button" onClick={ props.onClose }>
- *        Close
- *      </button>
- *     </Section.Actions>
- *    </Section>
- *   );
- * }
- */
-const Section = window.components.Section || NotCompatible('5.0');
-
- /**
- * ToggleSwitch component.
- *
- * @type {import('react').ComponentType<{ id: string, name: string, label?: string, switcherLabel?: string, description?: string }>}
- *
- * @example
- * 
- * import { ToggleSwitch } from 'camunda-modeler-plugin-helpers/components';
- *
- * function CustomToggle(props) {
- *   return (
- *    <Formik initialValues={ initialValues } onSubmit={ this.onSubmit }>
- *      {() => (
- *        <Form>
- *          <Field
- *            component={ ToggleSwitch }
- *            switcherLabel="Switcher label"
- *            id={ id }
- *            name={ name }
- *            description="Toggle description"
- *          />
- *        </Form>
- *       )}
- *    </Formik>
- *   );
- * }
- */
-const ToggleSwitch = window.components.ToggleSwitch || NotCompatible('5.0');
 
 /***/ }),
 
@@ -820,71 +519,56 @@ module.exports = window.react;
 
 /***/ }),
 
-/***/ "./node_modules/classnames/index.js":
-/*!******************************************!*\
-  !*** ./node_modules/classnames/index.js ***!
-  \******************************************/
-/***/ ((module, exports) => {
+/***/ "./node_modules/camunda-modeler-plugin-helpers/vendor/@bpmn-io/properties-panel/preact/compat.js":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/camunda-modeler-plugin-helpers/vendor/@bpmn-io/properties-panel/preact/compat.js ***!
+  \*******************************************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-/* global define */
+const { returnOrThrow } = __webpack_require__(/*! ../../../../helper */ "./node_modules/camunda-modeler-plugin-helpers/helper.js");
 
-(function () {
-	'use strict';
+module.exports = returnOrThrow(() => window.vendor.propertiesPanel.preact.compat, '5.0.0');
 
-	var hasOwn = {}.hasOwnProperty;
-	var nativeCodeString = '[native code]';
 
-	function classNames() {
-		var classes = [];
+/***/ }),
 
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
+/***/ "./node_modules/camunda-modeler-plugin-helpers/vendor/@bpmn-io/properties-panel/preact/jsx-runtime.js":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/camunda-modeler-plugin-helpers/vendor/@bpmn-io/properties-panel/preact/jsx-runtime.js ***!
+  \************************************************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-			var argType = typeof arg;
+const { returnOrThrow } = __webpack_require__(/*! ../../../../helper */ "./node_modules/camunda-modeler-plugin-helpers/helper.js");
 
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
-					classes.push(arg.toString());
-					continue;
-				}
+module.exports = returnOrThrow(() => window.vendor.propertiesPanel.preact.jsxRuntime, '5.0.0');
 
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
 
-		return classes.join(' ');
-	}
+/***/ }),
 
-	if ( true && module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else if (true) {
-		// register as 'classnames', consistent with npm package name
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-			return classNames;
-		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-}());
+/***/ "./node_modules/preact/dist/preact.module.js":
+/*!***************************************************!*\
+  !*** ./node_modules/preact/dist/preact.module.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Component": () => (/* binding */ k),
+/* harmony export */   "Fragment": () => (/* binding */ _),
+/* harmony export */   "cloneElement": () => (/* binding */ E),
+/* harmony export */   "createContext": () => (/* binding */ F),
+/* harmony export */   "createElement": () => (/* binding */ y),
+/* harmony export */   "createRef": () => (/* binding */ d),
+/* harmony export */   "h": () => (/* binding */ y),
+/* harmony export */   "hydrate": () => (/* binding */ D),
+/* harmony export */   "isValidElement": () => (/* binding */ i),
+/* harmony export */   "options": () => (/* binding */ l),
+/* harmony export */   "render": () => (/* binding */ B),
+/* harmony export */   "toChildArray": () => (/* binding */ P)
+/* harmony export */ });
+var n,l,u,i,t,r,o,f,e,c={},s=[],a=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;function h(n,l){for(var u in l)n[u]=l[u];return n}function v(n){var l=n.parentNode;l&&l.removeChild(n)}function y(l,u,i){var t,r,o,f={};for(o in u)"key"==o?t=u[o]:"ref"==o?r=u[o]:f[o]=u[o];if(arguments.length>2&&(f.children=arguments.length>3?n.call(arguments,2):i),"function"==typeof l&&null!=l.defaultProps)for(o in l.defaultProps)void 0===f[o]&&(f[o]=l.defaultProps[o]);return p(l,f,t,r,null)}function p(n,i,t,r,o){var f={type:n,props:i,key:t,ref:r,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,__h:null,constructor:void 0,__v:null==o?++u:o};return null==o&&null!=l.vnode&&l.vnode(f),f}function d(){return{current:null}}function _(n){return n.children}function k(n,l){this.props=n,this.context=l}function b(n,l){if(null==l)return n.__?b(n.__,n.__.__k.indexOf(n)+1):null;for(var u;l<n.__k.length;l++)if(null!=(u=n.__k[l])&&null!=u.__e)return u.__e;return"function"==typeof n.type?b(n):null}function g(n){var l,u;if(null!=(n=n.__)&&null!=n.__c){for(n.__e=n.__c.base=null,l=0;l<n.__k.length;l++)if(null!=(u=n.__k[l])&&null!=u.__e){n.__e=n.__c.base=u.__e;break}return g(n)}}function m(n){(!n.__d&&(n.__d=!0)&&t.push(n)&&!w.__r++||r!==l.debounceRendering)&&((r=l.debounceRendering)||o)(w)}function w(){var n,l,u,i,r,o,e,c;for(t.sort(f);n=t.shift();)n.__d&&(l=t.length,i=void 0,r=void 0,e=(o=(u=n).__v).__e,(c=u.__P)&&(i=[],(r=h({},o)).__v=o.__v+1,L(c,o,r,u.__n,void 0!==c.ownerSVGElement,null!=o.__h?[e]:null,i,null==e?b(o):e,o.__h),M(i,o),o.__e!=e&&g(o)),t.length>l&&t.sort(f));w.__r=0}function x(n,l,u,i,t,r,o,f,e,a){var h,v,y,d,k,g,m,w=i&&i.__k||s,x=w.length;for(u.__k=[],h=0;h<l.length;h++)if(null!=(d=u.__k[h]=null==(d=l[h])||"boolean"==typeof d||"function"==typeof d?null:"string"==typeof d||"number"==typeof d||"bigint"==typeof d?p(null,d,null,null,d):Array.isArray(d)?p(_,{children:d},null,null,null):d.__b>0?p(d.type,d.props,d.key,d.ref?d.ref:null,d.__v):d)){if(d.__=u,d.__b=u.__b+1,null===(y=w[h])||y&&d.key==y.key&&d.type===y.type)w[h]=void 0;else for(v=0;v<x;v++){if((y=w[v])&&d.key==y.key&&d.type===y.type){w[v]=void 0;break}y=null}L(n,d,y=y||c,t,r,o,f,e,a),k=d.__e,(v=d.ref)&&y.ref!=v&&(m||(m=[]),y.ref&&m.push(y.ref,null,d),m.push(v,d.__c||k,d)),null!=k?(null==g&&(g=k),"function"==typeof d.type&&d.__k===y.__k?d.__d=e=A(d,e,n):e=C(n,d,y,w,k,e),"function"==typeof u.type&&(u.__d=e)):e&&y.__e==e&&e.parentNode!=n&&(e=b(y))}for(u.__e=g,h=x;h--;)null!=w[h]&&("function"==typeof u.type&&null!=w[h].__e&&w[h].__e==u.__d&&(u.__d=$(i).nextSibling),S(w[h],w[h]));if(m)for(h=0;h<m.length;h++)O(m[h],m[++h],m[++h])}function A(n,l,u){for(var i,t=n.__k,r=0;t&&r<t.length;r++)(i=t[r])&&(i.__=n,l="function"==typeof i.type?A(i,l,u):C(u,i,i,t,i.__e,l));return l}function P(n,l){return l=l||[],null==n||"boolean"==typeof n||(Array.isArray(n)?n.some(function(n){P(n,l)}):l.push(n)),l}function C(n,l,u,i,t,r){var o,f,e;if(void 0!==l.__d)o=l.__d,l.__d=void 0;else if(null==u||t!=r||null==t.parentNode)n:if(null==r||r.parentNode!==n)n.appendChild(t),o=null;else{for(f=r,e=0;(f=f.nextSibling)&&e<i.length;e+=1)if(f==t)break n;n.insertBefore(t,r),o=r}return void 0!==o?o:t.nextSibling}function $(n){var l,u,i;if(null==n.type||"string"==typeof n.type)return n.__e;if(n.__k)for(l=n.__k.length-1;l>=0;l--)if((u=n.__k[l])&&(i=$(u)))return i;return null}function H(n,l,u,i,t){var r;for(r in u)"children"===r||"key"===r||r in l||T(n,r,null,u[r],i);for(r in l)t&&"function"!=typeof l[r]||"children"===r||"key"===r||"value"===r||"checked"===r||u[r]===l[r]||T(n,r,l[r],u[r],i)}function I(n,l,u){"-"===l[0]?n.setProperty(l,null==u?"":u):n[l]=null==u?"":"number"!=typeof u||a.test(l)?u:u+"px"}function T(n,l,u,i,t){var r;n:if("style"===l)if("string"==typeof u)n.style.cssText=u;else{if("string"==typeof i&&(n.style.cssText=i=""),i)for(l in i)u&&l in u||I(n.style,l,"");if(u)for(l in u)i&&u[l]===i[l]||I(n.style,l,u[l])}else if("o"===l[0]&&"n"===l[1])r=l!==(l=l.replace(/Capture$/,"")),l=l.toLowerCase()in n?l.toLowerCase().slice(2):l.slice(2),n.l||(n.l={}),n.l[l+r]=u,u?i||n.addEventListener(l,r?z:j,r):n.removeEventListener(l,r?z:j,r);else if("dangerouslySetInnerHTML"!==l){if(t)l=l.replace(/xlink(H|:h)/,"h").replace(/sName$/,"s");else if("width"!==l&&"height"!==l&&"href"!==l&&"list"!==l&&"form"!==l&&"tabIndex"!==l&&"download"!==l&&l in n)try{n[l]=null==u?"":u;break n}catch(n){}"function"==typeof u||(null==u||!1===u&&"-"!==l[4]?n.removeAttribute(l):n.setAttribute(l,u))}}function j(n){return this.l[n.type+!1](l.event?l.event(n):n)}function z(n){return this.l[n.type+!0](l.event?l.event(n):n)}function L(n,u,i,t,r,o,f,e,c){var s,a,v,y,p,d,b,g,m,w,A,P,C,$,H,I=u.type;if(void 0!==u.constructor)return null;null!=i.__h&&(c=i.__h,e=u.__e=i.__e,u.__h=null,o=[e]),(s=l.__b)&&s(u);try{n:if("function"==typeof I){if(g=u.props,m=(s=I.contextType)&&t[s.__c],w=s?m?m.props.value:s.__:t,i.__c?b=(a=u.__c=i.__c).__=a.__E:("prototype"in I&&I.prototype.render?u.__c=a=new I(g,w):(u.__c=a=new k(g,w),a.constructor=I,a.render=q),m&&m.sub(a),a.props=g,a.state||(a.state={}),a.context=w,a.__n=t,v=a.__d=!0,a.__h=[],a._sb=[]),null==a.__s&&(a.__s=a.state),null!=I.getDerivedStateFromProps&&(a.__s==a.state&&(a.__s=h({},a.__s)),h(a.__s,I.getDerivedStateFromProps(g,a.__s))),y=a.props,p=a.state,a.__v=u,v)null==I.getDerivedStateFromProps&&null!=a.componentWillMount&&a.componentWillMount(),null!=a.componentDidMount&&a.__h.push(a.componentDidMount);else{if(null==I.getDerivedStateFromProps&&g!==y&&null!=a.componentWillReceiveProps&&a.componentWillReceiveProps(g,w),!a.__e&&null!=a.shouldComponentUpdate&&!1===a.shouldComponentUpdate(g,a.__s,w)||u.__v===i.__v){for(u.__v!==i.__v&&(a.props=g,a.state=a.__s,a.__d=!1),a.__e=!1,u.__e=i.__e,u.__k=i.__k,u.__k.forEach(function(n){n&&(n.__=u)}),A=0;A<a._sb.length;A++)a.__h.push(a._sb[A]);a._sb=[],a.__h.length&&f.push(a);break n}null!=a.componentWillUpdate&&a.componentWillUpdate(g,a.__s,w),null!=a.componentDidUpdate&&a.__h.push(function(){a.componentDidUpdate(y,p,d)})}if(a.context=w,a.props=g,a.__P=n,P=l.__r,C=0,"prototype"in I&&I.prototype.render){for(a.state=a.__s,a.__d=!1,P&&P(u),s=a.render(a.props,a.state,a.context),$=0;$<a._sb.length;$++)a.__h.push(a._sb[$]);a._sb=[]}else do{a.__d=!1,P&&P(u),s=a.render(a.props,a.state,a.context),a.state=a.__s}while(a.__d&&++C<25);a.state=a.__s,null!=a.getChildContext&&(t=h(h({},t),a.getChildContext())),v||null==a.getSnapshotBeforeUpdate||(d=a.getSnapshotBeforeUpdate(y,p)),H=null!=s&&s.type===_&&null==s.key?s.props.children:s,x(n,Array.isArray(H)?H:[H],u,i,t,r,o,f,e,c),a.base=u.__e,u.__h=null,a.__h.length&&f.push(a),b&&(a.__E=a.__=null),a.__e=!1}else null==o&&u.__v===i.__v?(u.__k=i.__k,u.__e=i.__e):u.__e=N(i.__e,u,i,t,r,o,f,c);(s=l.diffed)&&s(u)}catch(n){u.__v=null,(c||null!=o)&&(u.__e=e,u.__h=!!c,o[o.indexOf(e)]=null),l.__e(n,u,i)}}function M(n,u){l.__c&&l.__c(u,n),n.some(function(u){try{n=u.__h,u.__h=[],n.some(function(n){n.call(u)})}catch(n){l.__e(n,u.__v)}})}function N(l,u,i,t,r,o,f,e){var s,a,h,y=i.props,p=u.props,d=u.type,_=0;if("svg"===d&&(r=!0),null!=o)for(;_<o.length;_++)if((s=o[_])&&"setAttribute"in s==!!d&&(d?s.localName===d:3===s.nodeType)){l=s,o[_]=null;break}if(null==l){if(null===d)return document.createTextNode(p);l=r?document.createElementNS("http://www.w3.org/2000/svg",d):document.createElement(d,p.is&&p),o=null,e=!1}if(null===d)y===p||e&&l.data===p||(l.data=p);else{if(o=o&&n.call(l.childNodes),a=(y=i.props||c).dangerouslySetInnerHTML,h=p.dangerouslySetInnerHTML,!e){if(null!=o)for(y={},_=0;_<l.attributes.length;_++)y[l.attributes[_].name]=l.attributes[_].value;(h||a)&&(h&&(a&&h.__html==a.__html||h.__html===l.innerHTML)||(l.innerHTML=h&&h.__html||""))}if(H(l,p,y,r,e),h)u.__k=[];else if(_=u.props.children,x(l,Array.isArray(_)?_:[_],u,i,t,r&&"foreignObject"!==d,o,f,o?o[0]:i.__k&&b(i,0),e),null!=o)for(_=o.length;_--;)null!=o[_]&&v(o[_]);e||("value"in p&&void 0!==(_=p.value)&&(_!==l.value||"progress"===d&&!_||"option"===d&&_!==y.value)&&T(l,"value",_,y.value,!1),"checked"in p&&void 0!==(_=p.checked)&&_!==l.checked&&T(l,"checked",_,y.checked,!1))}return l}function O(n,u,i){try{"function"==typeof n?n(u):n.current=u}catch(n){l.__e(n,i)}}function S(n,u,i){var t,r;if(l.unmount&&l.unmount(n),(t=n.ref)&&(t.current&&t.current!==n.__e||O(t,null,u)),null!=(t=n.__c)){if(t.componentWillUnmount)try{t.componentWillUnmount()}catch(n){l.__e(n,u)}t.base=t.__P=null,n.__c=void 0}if(t=n.__k)for(r=0;r<t.length;r++)t[r]&&S(t[r],u,i||"function"!=typeof n.type);i||null==n.__e||v(n.__e),n.__=n.__e=n.__d=void 0}function q(n,l,u){return this.constructor(n,u)}function B(u,i,t){var r,o,f;l.__&&l.__(u,i),o=(r="function"==typeof t)?null:t&&t.__k||i.__k,f=[],L(i,u=(!r&&t||i).__k=y(_,null,[u]),o||c,c,void 0!==i.ownerSVGElement,!r&&t?[t]:o?null:i.firstChild?n.call(i.childNodes):null,f,!r&&t?t:o?o.__e:i.firstChild,r),M(f,u)}function D(n,l){B(n,l,D)}function E(l,u,i){var t,r,o,f=h({},l.props);for(o in u)"key"==o?t=u[o]:"ref"==o?r=u[o]:f[o]=u[o];return arguments.length>2&&(f.children=arguments.length>3?n.call(arguments,2):i),p(l.type,f,t||l.key,r||l.ref,null)}function F(n,l){var u={__c:l="__cC"+e++,__:n,Consumer:function(n,l){return n.children(l)},Provider:function(n){var u,i;return this.getChildContext||(u=[],(i={})[l]=this,this.getChildContext=function(){return i},this.shouldComponentUpdate=function(n){this.props.value!==n.value&&u.some(function(n){n.__e=!0,m(n)})},this.sub=function(n){u.push(n);var l=n.componentWillUnmount;n.componentWillUnmount=function(){u.splice(u.indexOf(n),1),l&&l.call(n)}}),n.children}};return u.Provider.__=u.Consumer.contextType=u}n=s.slice,l={__e:function(n,l,u,i){for(var t,r,o;l=l.__;)if((t=l.__c)&&!t.__)try{if((r=t.constructor)&&null!=r.getDerivedStateFromError&&(t.setState(r.getDerivedStateFromError(n)),o=t.__d),null!=t.componentDidCatch&&(t.componentDidCatch(n,i||{}),o=t.__d),o)return t.__E=t}catch(l){n=l}throw n}},u=0,i=function(n){return null!=n&&void 0===n.constructor},k.prototype.setState=function(n,l){var u;u=null!=this.__s&&this.__s!==this.state?this.__s:this.__s=h({},this.state),"function"==typeof n&&(n=n(h({},u),this.props)),n&&h(u,n),null!=n&&this.__v&&(l&&this._sb.push(l),m(this))},k.prototype.forceUpdate=function(n){this.__v&&(this.__e=!0,n&&this.__h.push(n),m(this))},k.prototype.render=_,t=[],o="function"==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,f=function(n,l){return n.__v.__b-l.__v.__b},w.__r=0,e=0;
+//# sourceMappingURL=preact.module.js.map
 
 
 /***/ }),
@@ -6246,7 +5930,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "GenIcon": () => (/* binding */ GenIcon),
 /* harmony export */   "IconBase": () => (/* binding */ IconBase)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/camunda-modeler-plugin-helpers/react.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/camunda-modeler-plugin-helpers/vendor/@bpmn-io/properties-panel/preact/compat.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _iconContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iconContext */ "./node_modules/react-icons/lib/esm/iconContext.js");
 var __assign = undefined && undefined.__assign || function () {
@@ -6327,7 +6011,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DefaultContext": () => (/* binding */ DefaultContext),
 /* harmony export */   "IconContext": () => (/* binding */ IconContext)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/camunda-modeler-plugin-helpers/react.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/camunda-modeler-plugin-helpers/vendor/@bpmn-io/properties-panel/preact/compat.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 var DefaultContext = {
@@ -6570,48 +6254,25 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/file-excel.svg":
-/*!**********************************!*\
-  !*** ./resources/file-excel.svg ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./node_modules/preact-render-to-string/dist/index.mjs":
+/*!*************************************************************!*\
+  !*** ./node_modules/preact-render-to-string/dist/index.mjs ***!
+  \*************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "render": () => (/* binding */ S),
+/* harmony export */   "renderToStaticMarkup": () => (/* binding */ S),
+/* harmony export */   "renderToString": () => (/* binding */ S),
+/* harmony export */   "shallowRender": () => (/* binding */ x)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/camunda-modeler-plugin-helpers/react.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+/* harmony import */ var preact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! preact */ "./node_modules/preact/dist/preact.module.js");
+var n=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|^--/i,o=/^(area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)$/,i=/[\s\n\\/='"\0<>]/,l=/^xlink:?./,a=/["&<]/;function s(e){if(!1===a.test(e+=""))return e;for(var t=0,r=0,n="",o="";r<e.length;r++){switch(e.charCodeAt(r)){case 34:o="&quot;";break;case 38:o="&amp;";break;case 60:o="&lt;";break;default:continue}r!==t&&(n+=e.slice(t,r)),n+=o,t=r+1}return r!==t&&(n+=e.slice(t,r)),n}var f=function(e,t){return String(e).replace(/(\n+)/g,"$1"+(t||"\t"))},u=function(e,t,r){return String(e).length>(t||40)||!r&&-1!==String(e).indexOf("\n")||-1!==String(e).indexOf("<")},c={},_=/([A-Z])/g;function p(e){var t="";for(var r in e){var o=e[r];null!=o&&""!==o&&(t&&(t+=" "),t+="-"==r[0]?r:c[r]||(c[r]=r.replace(_,"-$1").toLowerCase()),t="number"==typeof o&&!1===n.test(r)?t+": "+o+"px;":t+": "+o+";")}return t||void 0}function d(e,t){return Array.isArray(t)?t.reduce(d,e):null!=t&&!1!==t&&e.push(t),e}function v(){this.__d=!0}function h(e,t){return{__v:e,context:t,props:e.props,setState:v,forceUpdate:v,__d:!0,__h:[]}}function g(e,t){var r=e.contextType,n=r&&t[r.__c];return null!=r?n?n.props.value:r.__:t}var y=[];function m(r,n,a,c,_,v){if(null==r||"boolean"==typeof r)return"";if("object"!=typeof r)return"function"==typeof r?"":s(r);var b=a.pretty,x=b&&"string"==typeof b?b:"\t";if(Array.isArray(r)){for(var k="",S=0;S<r.length;S++)b&&S>0&&(k+="\n"),k+=m(r[S],n,a,c,_,v);return k}if(void 0!==r.constructor)return"";var w,C=r.type,O=r.props,j=!1;if("function"==typeof C){if(j=!0,!a.shallow||!c&&!1!==a.renderRootComponent){if(C===preact__WEBPACK_IMPORTED_MODULE_0__.Fragment){var A=[];return d(A,r.props.children),m(A,n,a,!1!==a.shallowHighOrder,_,v)}var F,H=r.__c=h(r,n);preact__WEBPACK_IMPORTED_MODULE_0__.options.__b&&preact__WEBPACK_IMPORTED_MODULE_0__.options.__b(r);var M=preact__WEBPACK_IMPORTED_MODULE_0__.options.__r;if(C.prototype&&"function"==typeof C.prototype.render){var L=g(C,n);(H=r.__c=new C(O,L)).__v=r,H._dirty=H.__d=!0,H.props=O,null==H.state&&(H.state={}),null==H._nextState&&null==H.__s&&(H._nextState=H.__s=H.state),H.context=L,C.getDerivedStateFromProps?H.state=Object.assign({},H.state,C.getDerivedStateFromProps(H.props,H.state)):H.componentWillMount&&(H.componentWillMount(),H.state=H._nextState!==H.state?H._nextState:H.__s!==H.state?H.__s:H.state),M&&M(r),F=H.render(H.props,H.state,H.context)}else for(var T=g(C,n),E=0;H.__d&&E++<25;)H.__d=!1,M&&M(r),F=C.call(r.__c,O,T);return H.getChildContext&&(n=Object.assign({},n,H.getChildContext())),preact__WEBPACK_IMPORTED_MODULE_0__.options.diffed&&preact__WEBPACK_IMPORTED_MODULE_0__.options.diffed(r),m(F,n,a,!1!==a.shallowHighOrder,_,v)}C=(w=C).displayName||w!==Function&&w.name||function(e){var t=(Function.prototype.toString.call(e).match(/^\s*function\s+([^( ]+)/)||"")[1];if(!t){for(var r=-1,n=y.length;n--;)if(y[n]===e){r=n;break}r<0&&(r=y.push(e)-1),t="UnnamedComponent"+r}return t}(w)}var $,D,N="<"+C;if(O){var P=Object.keys(O);a&&!0===a.sortAttributes&&P.sort();for(var W=0;W<P.length;W++){var I=P[W],R=O[I];if("children"!==I){if(!i.test(I)&&(a&&a.allAttributes||"key"!==I&&"ref"!==I&&"__self"!==I&&"__source"!==I)){if("defaultValue"===I)I="value";else if("defaultChecked"===I)I="checked";else if("defaultSelected"===I)I="selected";else if("className"===I){if(void 0!==O.class)continue;I="class"}else _&&l.test(I)&&(I=I.toLowerCase().replace(/^xlink:?/,"xlink:"));if("htmlFor"===I){if(O.for)continue;I="for"}"style"===I&&R&&"object"==typeof R&&(R=p(R)),"a"===I[0]&&"r"===I[1]&&"boolean"==typeof R&&(R=String(R));var U=a.attributeHook&&a.attributeHook(I,R,n,a,j);if(U||""===U)N+=U;else if("dangerouslySetInnerHTML"===I)D=R&&R.__html;else if("textarea"===C&&"value"===I)$=R;else if((R||0===R||""===R)&&"function"!=typeof R){if(!(!0!==R&&""!==R||(R=I,a&&a.xml))){N=N+" "+I;continue}if("value"===I){if("select"===C){v=R;continue}"option"===C&&v==R&&void 0===O.selected&&(N+=" selected")}N=N+" "+I+'="'+s(R)+'"'}}}else $=R}}if(b){var V=N.replace(/\n\s*/," ");V===N||~V.indexOf("\n")?b&&~N.indexOf("\n")&&(N+="\n"):N=V}if(N+=">",i.test(C))throw new Error(C+" is not a valid HTML tag name in "+N);var q,z=o.test(C)||a.voidElements&&a.voidElements.test(C),Z=[];if(D)b&&u(D)&&(D="\n"+x+f(D,x)),N+=D;else if(null!=$&&d(q=[],$).length){for(var B=b&&~N.indexOf("\n"),G=!1,J=0;J<q.length;J++){var K=q[J];if(null!=K&&!1!==K){var Q=m(K,n,a,!0,"svg"===C||"foreignObject"!==C&&_,v);if(b&&!B&&u(Q)&&(B=!0),Q)if(b){var X=Q.length>0&&"<"!=Q[0];G&&X?Z[Z.length-1]+=Q:Z.push(Q),G=X}else Z.push(Q)}}if(b&&B)for(var Y=Z.length;Y--;)Z[Y]="\n"+x+f(Z[Y],x)}if(Z.length||D)N+=Z.join("");else if(a&&a.xml)return N.substring(0,N.length-1)+" />";return!z||q||D?(b&&~N.indexOf("\n")&&(N+="\n"),N=N+"</"+C+">"):N=N.replace(/>$/," />"),N}var b={shallow:!0};S.render=S;var x=function(e,t){return S(e,t,b)},k=[];function S(n,o,i){o=o||{};var l=preact__WEBPACK_IMPORTED_MODULE_0__.options.__s;preact__WEBPACK_IMPORTED_MODULE_0__.options.__s=!0;var a,s=(0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(preact__WEBPACK_IMPORTED_MODULE_0__.Fragment,null);return s.__k=[n],a=i&&(i.pretty||i.voidElements||i.sortAttributes||i.shallow||i.allAttributes||i.xml||i.attributeHook)?m(n,o,i):F(n,o,!1,void 0,s),preact__WEBPACK_IMPORTED_MODULE_0__.options.__c&&preact__WEBPACK_IMPORTED_MODULE_0__.options.__c(n,k),preact__WEBPACK_IMPORTED_MODULE_0__.options.__s=l,k.length=0,a}function w(e){return null==e||"boolean"==typeof e?null:"string"==typeof e||"number"==typeof e||"bigint"==typeof e?(0,preact__WEBPACK_IMPORTED_MODULE_0__.h)(null,null,e):e}function C(e,t){return"className"===e?"class":"htmlFor"===e?"for":"defaultValue"===e?"value":"defaultChecked"===e?"checked":"defaultSelected"===e?"selected":t&&l.test(e)?e.toLowerCase().replace(/^xlink:?/,"xlink:"):e}function O(e,t){return"style"===e&&null!=t&&"object"==typeof t?p(t):"a"===e[0]&&"r"===e[1]&&"boolean"==typeof t?String(t):t}var j=Array.isArray,A=Object.assign;function F(r,n,l,a,f){if(null==r||!0===r||!1===r||""===r)return"";if("object"!=typeof r)return"function"==typeof r?"":s(r);if(j(r)){var u="";f.__k=r;for(var c=0;c<r.length;c++)u+=F(r[c],n,l,a,f),r[c]=w(r[c]);return u}if(void 0!==r.constructor)return"";r.__=f,preact__WEBPACK_IMPORTED_MODULE_0__.options.__b&&preact__WEBPACK_IMPORTED_MODULE_0__.options.__b(r);var _=r.type,p=r.props;if("function"==typeof _){var d;if(_===preact__WEBPACK_IMPORTED_MODULE_0__.Fragment)d=p.children;else{d=_.prototype&&"function"==typeof _.prototype.render?function(e,r){var n=e.type,o=g(n,r),i=new n(e.props,o);e.__c=i,i.__v=e,i.__d=!0,i.props=e.props,null==i.state&&(i.state={}),null==i.__s&&(i.__s=i.state),i.context=o,n.getDerivedStateFromProps?i.state=A({},i.state,n.getDerivedStateFromProps(i.props,i.state)):i.componentWillMount&&(i.componentWillMount(),i.state=i.__s!==i.state?i.__s:i.state);var l=preact__WEBPACK_IMPORTED_MODULE_0__.options.__r;return l&&l(e),i.render(i.props,i.state,i.context)}(r,n):function(e,r){var n,o=h(e,r),i=g(e.type,r);e.__c=o;for(var l=preact__WEBPACK_IMPORTED_MODULE_0__.options.__r,a=0;o.__d&&a++<25;)o.__d=!1,l&&l(e),n=e.type.call(o,e.props,i);return n}(r,n);var v=r.__c;v.getChildContext&&(n=A({},n,v.getChildContext()))}var y=F(d=null!=d&&d.type===preact__WEBPACK_IMPORTED_MODULE_0__.Fragment&&null==d.key?d.props.children:d,n,l,a,r);return preact__WEBPACK_IMPORTED_MODULE_0__.options.diffed&&preact__WEBPACK_IMPORTED_MODULE_0__.options.diffed(r),r.__=void 0,preact__WEBPACK_IMPORTED_MODULE_0__.options.unmount&&preact__WEBPACK_IMPORTED_MODULE_0__.options.unmount(r),y}var m,b,x="<";if(x+=_,p)for(var k in m=p.children,p){var S=p[k];if(!("key"===k||"ref"===k||"__self"===k||"__source"===k||"children"===k||"className"===k&&"class"in p||"htmlFor"===k&&"for"in p||i.test(k)))if(S=O(k=C(k,l),S),"dangerouslySetInnerHTML"===k)b=S&&S.__html;else if("textarea"===_&&"value"===k)m=S;else if((S||0===S||""===S)&&"function"!=typeof S){if(!0===S||""===S){S=k,x=x+" "+k;continue}if("value"===k){if("select"===_){a=S;continue}"option"!==_||a!=S||"selected"in p||(x+=" selected")}x=x+" "+k+'="'+s(S)+'"'}}var H=x;if(x+=">",i.test(_))throw new Error(_+" is not a valid HTML tag name in "+x);var M="",L=!1;if(b)M+=b,L=!0;else if("string"==typeof m)M+=s(m),L=!0;else if(j(m)){r.__k=m;for(var T=0;T<m.length;T++){var E=m[T];if(m[T]=w(E),null!=E&&!1!==E){var $=F(E,n,"svg"===_||"foreignObject"!==_&&l,a,r);$&&(M+=$,L=!0)}}}else if(null!=m&&!1!==m&&!0!==m){r.__k=[w(m)];var D=F(m,n,"svg"===_||"foreignObject"!==_&&l,a,r);D&&(M+=D,L=!0)}if(preact__WEBPACK_IMPORTED_MODULE_0__.options.diffed&&preact__WEBPACK_IMPORTED_MODULE_0__.options.diffed(r),r.__=void 0,preact__WEBPACK_IMPORTED_MODULE_0__.options.unmount&&preact__WEBPACK_IMPORTED_MODULE_0__.options.unmount(r),L)x+=M;else if(o.test(_))return H+" />";return x+"</"+_+">"}S.shallowRender=x;/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (S);
+//# sourceMappingURL=index.module.js.map
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (({
-  styles = {},
-  ...props
-}) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", _extends({
-  width: "16",
-  height: "16",
-  fill: "none",
-  xmlns: "http://www.w3.org/2000/svg"
-}, props), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-  d: "M14.898 2.3h-6.5v11.4h6.5c.223 0 .403-.18.403-.4V2.7a.401.401 0 00-.403-.4z",
-  fill: "#fff"
-}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-  d: "M9.3 15.2L.7 13.601V2.398L9.3.801v14.398z",
-  fill: "#5D9874"
-}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-  d: "M6.05 10.8l-.96-1.823a1.606 1.606 0 01-.117-.375h-.016A2.37 2.37 0 014.828 9l-.969 1.8h-1.5L4.141 8 2.51 5.2h1.532l.8 1.679c.071.152.13.309.169.473h.015c.032-.11.09-.274.176-.489l.89-1.664h1.4L5.82 7.977 7.547 10.8H6.05z",
-  fill: "#fff"
-}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-  d: "M14.2 5.8h-3V4.399h3v1.403zm-2.802-.198H14v-1h-2.602v1zm-.796.199h-1.25v-.2h1.046v-1H9.352v-.203h1.25v1.403zm3.597 2h-3V6.398h3v1.403zm-2.8-.2H14v-1h-2.602v1zm2.8 2.2h-3V8.398h3v1.403zm-2.8-.2H14v-1h-2.602v1zm-.797-1.8h-1.25v-.2h1.046v-1H9.352v-.203h1.25v1.403zm0 2h-1.25v-.2h1.046v-1H9.352v-.203h1.25v1.403zm3.597 2h-3v-1.403h3v1.403zm-2.8-.2H14v-1h-2.602v1zm-.797.2h-1.25v-.2h1.046v-1H9.352v-.203h1.25v1.403z",
-  fill: "#E0E9F0"
-}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-  d: "M7.55 11H6.056a.095.095 0 01-.09-.055L5 9.02c-.004 0-.004 0-.004-.004l-.035-.082a1.15 1.15 0 01-.04.105l-.956 1.906a.095.095 0 01-.09.055H2.371a.097.097 0 01-.086-.05c-.02-.032-.015-.071 0-.102l1.742-2.852-1.605-2.848a.108.108 0 010-.097c.02-.031.05-.051.09-.051h1.531c.039 0 .074.023.094.059l.797 1.777c.035.07.062.14.09.215l.085-.227.895-1.77A.1.1 0 016.094 5h1.398c.04 0 .07.02.09.05a.107.107 0 010 .098L5.937 7.977l1.7 2.87c.02.032.02.071 0 .102A.102.102 0 017.55 11zm-1.433-.2h1.258l-1.64-2.773a.116.116 0 010-.101L7.32 5.199H6.156l-.863 1.707c-.098.246-.145.39-.168.473a.104.104 0 01-.098.07c-.047 0-.101-.031-.113-.074a2.6 2.6 0 00-.16-.453L3.98 5.199h-1.3l1.55 2.75a.104.104 0 01-.003.102L2.55 10.8h1.261l.93-1.848c.047-.117.086-.246.117-.375a.1.1 0 01.098-.078c.05 0 .11.035.117.082.02.121.055.238.106.352l.937 1.867zm8.781 3H9.301v-.198h5.597c.168 0 .301-.137.301-.301V2.699a.3.3 0 00-.3-.3h-5.7v-.2h5.7a.5.5 0 01.5.5v10.602c0 .273-.223.5-.5.5z",
-  fill: "#3C5D49"
-}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-  d: "M9.398 15.32L.602 13.684V2.316L9.398.68v14.64zM.801 13.516l8.398 1.562V.922L.801 2.484v11.032z",
-  fill: "#3C5D49"
-})));
 
 /***/ })
 
@@ -6693,12 +6354,12 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! camunda-modeler-plugin-helpers */ "./node_modules/camunda-modeler-plugin-helpers/index.js");
 /* harmony import */ var _pallete___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pallete/ */ "./client/pallete/index.js");
-/* harmony import */ var _config_config_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config/config-dialog */ "./client/config/config-dialog.js");
 
 
+//import config from './config/config-dialog';
 
 (0,camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__.registerPlatformBpmnJSPlugin)(_pallete___WEBPACK_IMPORTED_MODULE_1__["default"]);
-(0,camunda_modeler_plugin_helpers__WEBPACK_IMPORTED_MODULE_0__.registerClientExtension)(_config_config_dialog__WEBPACK_IMPORTED_MODULE_2__["default"]);
+// registerClientExtension(config);
 })();
 
 /******/ })()
