@@ -1,7 +1,7 @@
 import React, {
   Fragment,
   PureComponent
-} from 'camunda-modeler-plugin-helpers/react';
+} from 'react';
 
 import {
   Fill
@@ -17,7 +17,7 @@ const defaultState = {
   configOpen: false
 };
 
-export default class ConfigDialogPlugin extends PureComponent {
+export default class ConfigDialog extends PureComponent {
 
   constructor(props) {
     super(props);

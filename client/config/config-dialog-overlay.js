@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'camunda-modeler-plugin-helpers/react';
+import React, { useEffect, useState } from 'react';
 import { Overlay, Section } from 'camunda-modeler-plugin-helpers/components';
 
 const OVERLAY_OFFSET = { top: 0, right: 0 };

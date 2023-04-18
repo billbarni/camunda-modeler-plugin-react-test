@@ -8,7 +8,8 @@ import { IconContext } from "react-icons/lib";
 import { IoPeopleOutline } from "react-icons/io5"; 
 
 import { render } from 'preact-render-to-string';
-export default class CustomPaletteProvider {
+
+export default class UserPaletteProvider {
 
   constructor(palette, create, elementFactory, bpmnFactory, injector) {
     this.create = create;
@@ -57,7 +58,7 @@ export default class CustomPaletteProvider {
   }
 }
 
-CustomPaletteProvider.$inject = [
+UserPaletteProvider.$inject = [
   'palette',
   'create',
   'elementFactory',
